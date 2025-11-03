@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color tokens for Tailwind v4 */
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(6.7% 0 0);
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(6.7% 0 0);
+  --color-popover: oklch(100% 0 0);
+  --color-popover-foreground: oklch(6.7% 0 0);
+  --color-primary: oklch(6.7% 0 0);
+  --color-primary-foreground: oklch(100% 0 0);
+  --color-secondary: oklch(96.9% 0 0);
+  --color-secondary-foreground: oklch(6.7% 0 0);
+  --color-muted: oklch(96.9% 0 0);
+  --color-muted-foreground: oklch(40% 0 0);
+  --color-accent: oklch(96.9% 0 0);
+  --color-accent-foreground: oklch(6.7% 0 0);
+  --color-destructive: oklch(60.2% 0.21 29.23);
+  --color-destructive-foreground: oklch(100% 0 0);
+  --color-border: oklch(89.8% 0 0);
+  --color-input: oklch(89.8% 0 0);
+  --color-ring: oklch(6.7% 0 0);
+  
+  /* Radius */
+  --radius: 0.5rem;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 6.7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 6.7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 6.7%;
+    --primary: 0 0% 6.7%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96.9%;
+    --secondary-foreground: 0 0% 6.7%;
+    --muted: 0 0% 96.9%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 96.9%;
+    --accent-foreground: 0 0% 6.7%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 6.7%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
