@@ -91,7 +91,4 @@ Supabase 클라이언트 설정과 공통 유틸리티 함수를 포함합니다
 ### 문서 파일
 - **`README.md`**: 프로젝트 개요 및 주요 기능 소개
 - **`changelog.md`**: 버전별 변경 이력
-- **`keysetting.md`**: Supabase API 키 설정 방법
-- **`envsetting.md`**: 로컬 개발 환경 설정 가이드
-- **`deploy.md`**: Vercel 배포 가이드
 - **`PROJECT_STRUCTURE.md`**: 본 문서 (프로젝트 구조 설명)

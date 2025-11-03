@@ -7,6 +7,23 @@ interface PageProps {
   params: Promise<{ id: string }>;
 }
 
+// --- 관계/행 타입 선언 ---
+type RelUser = { email: string; display_name: string | null };
+type Score = {
+  thickness?: number; density?: number; smoothness?: number; clarity?: number; granularity?: number;
+  aroma_continuity?: number; aroma_length?: number; refinement?: number; delicacy?: number; aftertaste?: number;
+};
+
+type AssessmentRow = {
+  id: string;
+  assessment_date: string;
+  notes: string | null;
+  utensils: string | null;
+  user_id: string;
+  users: RelUser | RelUser[];
+  assessment_scores: Score[] | null;
+};
+
 export default async function TeaDetailPage({ params }: PageProps) {
   const { id } = await params;
   const supabase = await createClient();
@@ -45,7 +62,7 @@ export default async function TeaDetailPage({ params }: PageProps) {
   }
 
   // Fetch individual assessments (only for panel and admin)
-  let assessments = [];
+  let assessments: AssessmentRow[] = [];
   if (userProfile && (userProfile.role === 'panel' || userProfile.role === 'admin')) {
     const { data: assessmentData } = await supabase
       .from('assessments')
