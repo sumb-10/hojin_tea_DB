@@ -165,26 +165,26 @@ export function AdminClient({ users: initialUsers, teas }: AdminClientProps) {
         const score = a.assessment_scores?.[0]; 
 
         return [
-          a.assessment_date,
-          tea.name_ko || '',
-          tea.name_en || '',
-          tea.year,
-          tea.category,
-          tea.origin || '',
-          tea.seller || '',
-          user.display_name || user.email,
-          a.utensils || '',
-          score?.thickness || '',
-          score?.density || '',
-          score?.smoothness || '',
-          score?.clarity || '',
-          score?.granularity || '',
-          score?.aroma_continuity || '',
-          score?.aroma_length || '',
-          score?.refinement || '',
-          score?.delicacy || '',
-          score?.aftertaste || '',
-          a.notes || ''
+          a.assessment_date ?? '',
+          tea?.name_ko ?? '',
+          tea?.name_en ?? '',
+          tea?.year ?? '',
+          tea?.category ?? '',
+          tea?.origin ?? '',
+          tea?.seller ?? '',
+          (user?.display_name ?? user?.email) ?? '',
+          a.utensils ?? '',
+          score?.thickness ?? '',
+          score?.density ?? '',
+          score?.smoothness ?? '',
+          score?.clarity ?? '',
+          score?.granularity ?? '',
+          score?.aroma_continuity ?? '',
+          score?.aroma_length ?? '',
+          score?.refinement ?? '',
+          score?.delicacy ?? '',
+          score?.aftertaste ?? '',
+          a.notes ?? ''
         ];
       }) || [];
 
