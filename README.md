@@ -20,22 +20,45 @@
 - **UI Components**: Radix UI, shadcn/ui (스타일링 참고)
 - **Deployment**: Vercel (Frontend), Supabase (Backend/DB)
 
+## 폴더 구조(예시)
+src/
+  app/
+    (routes...)
+    api/
+      auth/
+      teas/
+      assessments/
+    globals.css
+  components/
+    charts/
+    ui/
+  lib/
+    supabase/
+      client.ts   // browser client
+      server.ts   // server-side client (Route Handlers)
+  types/
+  utils/
+public/
+
+## 로드맵
+
+ 필터/정렬 확장(산지/카테고리/년도 범위) (구현완료)
+ 고급 시각화(비교 레이더 차트, 추세선) (구현완료)
+ 관리자용 일괄 업로드/내보내기 UI (구현완료)
+ 멀티언어(i18n) 지원
+ 모바일 최적화 (구현완료)
+
 ## 시작하기
 
-프로젝트를 로컬 환경에서 실행하고 개발을 시작하는 방법은 `envsetting.md` 파일을 참고해주세요.
+홈페이지 구글 로그인 후, tea_hojin에게 패널 승인 요청해주세요.
+Panel은 품평 기록을 남길 수 있습니다.
+Guest는 품평 기록 보기만 가능합니다.
 
-## 배포
+## 문의
 
-Vercel과 Supabase를 사용하여 웹 서비스를 배포하는 방법은 `deploy.md` 파일을 참고해주세요.
+Maintainer: hojin
+문의: 이슈 등록 또는 PR로 논의해주세요.
 
-## 데이터베이스 스키마
-
-Supabase 데이터베이스 설정에 필요한 전체 SQL 스키마는 `supabase/schema.sql` 파일에 정의되어 있습니다. 해당 파일을 Supabase 프로젝트의 SQL Editor에서 실행하여 테이블과 정책을 설정할 수 있습니다.
-
-- `users`: 사용자 정보 및 권한
-- `teas`: 차 마스터 정보
-- `assessments`: 품평 세션 정보
-- `assessment_scores`: 품평 항목별 점수
-- `tea_average_scores`: 게스트에게 보여주기 위한 차별 평균 점수 뷰
-
-Row Level Security (RLS) 정책이 적용되어 각 사용자의 권한에 따라 데이터 접근이 제어됩니다.
+## license
+본 프로젝트는 개인 웹사이트 제작 공부용 프로젝트입니다.
+본 저장소의 코드와 문서는 MIT License를 따릅니다.
