@@ -21,44 +21,44 @@
 - **Deployment**: Vercel (Frontend), Supabase (Backend/DB)
 
 ## 폴더 구조(예시)
-src/
-  app/
-    (routes...)
-    api/
-      auth/
-      teas/
-      assessments/
-    globals.css
-  components/
-    charts/
-    ui/
-  lib/
-    supabase/
-      client.ts   // browser client
-      server.ts   // server-side client (Route Handlers)
-  types/
-  utils/
-public/
+- src/
+-  app/
+-    (routes...)
+-    api/
+-      auth/
+-      teas/
+-      assessments/
+-    globals.css
+-  components/
+-    charts/
+-    ui/
+-  lib/
+-    supabase/
+-      client.ts   // browser client
+-      server.ts   // server-side client (Route Handlers)
+-  types/
+-  utils/
+-public/
 
 ## 로드맵
 
- 필터/정렬 확장(산지/카테고리/년도 범위) (구현완료)
- 고급 시각화(비교 레이더 차트, 추세선) (구현완료)
- 관리자용 일괄 업로드/내보내기 UI (구현완료)
- 멀티언어(i18n) 지원
- 모바일 최적화 (구현완료)
+ - 필터/정렬 확장(산지/카테고리/년도 범위) (구현완료)
+ - 고급 시각화(비교 레이더 차트, 추세선) (구현완료)
+ - 관리자용 일괄 업로드/내보내기 UI (구현완료)
+ - 멀티언어(i18n) 지원
+ - 모바일 최적화 (구현완료)
 
 ## 시작하기
 
-홈페이지 구글 로그인 후, tea_hojin에게 패널 승인 요청해주세요.
-Panel은 품평 기록을 남길 수 있습니다.
-Guest는 품평 기록 보기만 가능합니다.
+- 홈페이지 구글 로그인 후, tea_hojin에게 패널 승인 요청해주세요.
+- Panel은 품평 기록을 남길 수 있습니다.
+- Guest는 품평 기록 보기만 가능합니다.
 
 ## 문의
 
-Maintainer: hojin
-문의: 이슈 등록 또는 PR로 논의해주세요.
+- Maintainer: hojin
+- 문의: 이슈 등록 또는 PR로 논의해주세요.
 
 ## license
-본 프로젝트는 개인 웹사이트 제작 공부용 프로젝트입니다.
-본 저장소의 코드와 문서는 MIT License를 따릅니다.
+- 본 프로젝트는 개인 웹사이트 제작 공부용 프로젝트입니다.
+- 본 저장소의 코드와 문서는 MIT License를 따릅니다.
