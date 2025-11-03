@@ -67,6 +67,45 @@ export function AdminClient({ users: initialUsers, teas }: AdminClientProps) {
 
   const handleExportCSV = async () => {
     try {
+      // -------- 타입 선언 (함수 내부에 국한) --------
+    type Tea = {
+      name_ko: string;
+      name_en?: string | null;
+      year?: number | null;
+      category?: string | null;
+      origin?: string | null;
+      seller?: string | null;
+    };
+
+    type RelUser = {
+      email: string;
+      display_name: string | null;
+    };
+
+    type Score = {
+      thickness?: number;
+      density?: number;
+      smoothness?: number;
+      clarity?: number;
+      granularity?: number;
+      aroma_continuity?: number;
+      aroma_length?: number;
+      refinement?: number;
+      delicacy?: number;
+      aftertaste?: number;
+    };
+
+    type AssessmentRow = {
+      id: string;
+      assessment_date: string;
+      utensils: string | null;
+      notes: string | null;
+      teas: Tea | Tea[];                        // 👈 배열/객체 모두 허용
+      users: RelUser | RelUser[];               // 👈 배열/객체 모두 허용
+      assessment_scores: Score[] | null;
+    };
+
+
       // Fetch all assessments with related data
       const { data: assessments, error } = await supabase
         .from('assessments')
@@ -119,13 +158,15 @@ export function AdminClient({ users: initialUsers, teas }: AdminClientProps) {
       ];
 
       const rows = assessments?.map(a => {
-        const tea = a.teas;
-        const user = a.users;
-        const score = a.assessment_scores?.[0];
+        const teaRel = a.teas;
+        const tea: Tea | undefined = Array.isArray(teaRel) ? teaRel[0] : teaRel;
+        const userRel = a.users;
+        const user: RelUser | undefined = Array.isArray(userRel) ? userRel[0] : userRel;
+        const score = a.assessment_scores?.[0]; 
 
         return [
           a.assessment_date,
-          tea.name_ko,
+          tea.name_ko || '',
           tea.name_en || '',
           tea.year,
           tea.category,
