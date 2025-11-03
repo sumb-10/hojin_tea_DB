@@ -60,12 +60,17 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ className, ...props }) => (
-          <ChevronLeft className={cn("size-4", className)} {...props} />
-        ),
-        IconRight: ({ className, ...props }) => (
-          <ChevronRight className={cn("size-4", className)} {...props} />
-        ),
+        // ✅ v9 표준: 하나의 Chevron 컴포넌트에 orientation으로 방향이 넘어옵니다.
+        Chevron: ({ orientation, className, ...rest }) => {
+          if (orientation === "left") {
+            return <ChevronLeft className={cn("h-4 w-4", className)} {...rest} />;
+          }
+          if (orientation === "right") {
+            return <ChevronRight className={cn("h-4 w-4", className)} {...rest} />;
+          }
+          // (dropdown 등에서 up/down도 씁니다)
+          return <ChevronRight className={cn("h-4 w-4", className)} {...rest} />;
+        },
       }}
       {...props}
     />
